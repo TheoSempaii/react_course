@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar";
+import "../css/index.css"
 
 function App() {
   const likes = 110;
