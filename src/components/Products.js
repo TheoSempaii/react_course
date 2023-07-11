@@ -1,8 +1,6 @@
 import { useState } from "react";
 
-const Products = (props = {
-  filter: (p) => p
-}) => {
+const Products = ({ filter = p => p }) => {
 
   let [products, setProducts] = useState([{
     id: 1,
@@ -16,7 +14,7 @@ const Products = (props = {
     description: "This is a product 2",
   }])
 
-  products = products.filter(props.filter)
+  products = products.filter(filter)
 
   return (
     <div className="product-container">
