@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Products = ({ filter = p => p }) => {
 
@@ -12,9 +12,18 @@ const Products = ({ filter = p => p }) => {
     name: "Product 2",
     price: 1000,
     description: "This is a product 2",
+  }, {
+    id: 3,
+    name: "Product 3",
+    price: 1000,
+    description: "This is a product 3",
   }])
 
   products = products.filter(filter)
+
+  useEffect(()=>{
+    console.log(products)
+  }, [products])
 
   return (
     <div className="product-container">
@@ -28,6 +37,7 @@ const Products = ({ filter = p => p }) => {
       ))}
     </div>
   )
+
 }
 
 export default Products;
