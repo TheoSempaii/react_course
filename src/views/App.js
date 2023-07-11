@@ -1,20 +1,19 @@
 import Navbar from "../components/Navbar";
+import { useState } from "react";
 import "../css/index.css"
 
-
-function handleClick() {
-  console.log("Click!")
-}
-
 function App() {
-  const likes = 110;
-  const arr = [0, 1, 2, 3, 4, 5]
+
+  const [counter, setCounter] = useState(0)
+
+  function handleClick() {
+    setCounter(counter + 1)
+  }
+
   return (
     <div className="App">
       <Navbar />
-      <h1>test</h1>
-      <p>{likes}</p>
-      <p>{arr}</p>
+      <h1>{counter}</h1>
       <button onClick={handleClick}>A</button>
     </div>
   );
