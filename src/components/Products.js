@@ -1,29 +1,18 @@
 import { useEffect, useState } from "react";
 
+
+
 const Products = ({ filter = p => p }) => {
 
-  let [products, setProducts] = useState([{
-    id: 1,
-    name: "Product 1",
-    price: 1000,
-    description: "This is a product 1",
-  }, {
-    id: 2,
-    name: "Product 2",
-    price: 1000,
-    description: "This is a product 2",
-  }, {
-    id: 3,
-    name: "Product 3",
-    price: 1000,
-    description: "This is a product 3",
-  }])
+  let [products, setProducts] = useState([]);
 
-  products = products.filter(filter)
 
-  useEffect(()=>{
-    console.log(products)
-  }, [products])
+
+
+
+  // useEffect(() => {
+  //   console.log(products)
+  // }, [products])
 
   return (
     <div className="product-container">
