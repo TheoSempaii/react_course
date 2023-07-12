@@ -1,18 +1,20 @@
 import { useEffect, useState } from "react";
 
-
+async function getProducts() {
+  const response = await fetch("http://localhost:8080/products")
+  const data = await response.json();
+  return data;
+}
 
 const Products = ({ filter = p => p }) => {
 
   let [products, setProducts] = useState([]);
 
-
-
-
-
-  // useEffect(() => {
-  //   console.log(products)
-  // }, [products])
+  useEffect(() => {
+    (async ()=>{
+      setProducts(await getProducts())
+    })();
+  }, [products])
 
   return (
     <div className="product-container">
