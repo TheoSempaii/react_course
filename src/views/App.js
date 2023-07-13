@@ -1,6 +1,7 @@
-import Body from "../components/Body";
-import Navbar from "../components/Navbar";
+import Home from "./Home";
 import "../css/index.css"
+import { BrowserRouter, Route, Routes} from "react-router-dom"
+
 
 function App() {
 
@@ -8,8 +9,11 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
-      <Body />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home></Home>}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
